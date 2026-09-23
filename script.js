@@ -1,10 +1,12 @@
 const header=document.querySelector('[data-header]');const menuButton=document.querySelector('[data-menu-button]');const menuLabel=document.querySelector('[data-menu-label]');const nav=document.querySelector('[data-nav]');const form=document.querySelector('[data-contact-form]');
 const publicEmail='';
+if(window.matchMedia('(max-width: 720px)').matches)nav?.setAttribute('inert','');
 const updateHeader=()=>header.classList.toggle('scrolled',window.scrollY>16);updateHeader();window.addEventListener('scroll',updateHeader,{passive:true});
-const setMenu=open=>{menuButton?.setAttribute('aria-expanded',String(open));menuButton?.setAttribute('aria-label',`${open?'Close':'Open'} navigation`);if(menuLabel)menuLabel.textContent=`${open?'Close':'Open'} navigation`;nav?.classList.toggle('open',open);document.body.classList.toggle('menu-open',open)};
+const setMenu=open=>{menuButton?.setAttribute('aria-expanded',String(open));menuButton?.setAttribute('aria-label',`${open?'Close':'Open'} navigation`);if(menuLabel)menuLabel.textContent=`${open?'Close':'Open'} navigation`;nav?.classList.toggle('open',open);if(nav){if(open)nav.removeAttribute('inert');else nav.setAttribute('inert','')}document.body.classList.toggle('menu-open',open)};
 menuButton?.addEventListener('click',()=>setMenu(menuButton.getAttribute('aria-expanded')!=='true'));
 nav?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenu(false)));
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&menuButton?.getAttribute('aria-expanded')==='true'){setMenu(false);menuButton.focus()}});
+window.addEventListener('resize',()=>{if(window.matchMedia('(max-width: 720px)').matches){if(!nav?.classList.contains('open'))nav?.setAttribute('inert','')}else{nav?.removeAttribute('inert');setMenu(false)}});
 document.querySelector('[data-year]').textContent=new Date().getFullYear();
 const status=form?.querySelector('[data-form-status]');const note=form?.querySelector('[data-form-note]');
 const showError=(field,message)=>{field.setAttribute('aria-invalid',message?'true':'false');const error=document.getElementById(`${field.id}-error`);if(error)error.textContent=message};
