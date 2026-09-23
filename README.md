@@ -15,3 +15,7 @@ Then open `http://localhost:8080`.
 ## Contact path
 
 The enquiry form validates the essential fields and preserves the drafted enquiry without sending personal data to an unconfirmed third-party destination. Set `publicEmail` in `script.js` only after NextMind-AI confirms a public project inbox; the same form will then open a ready-to-send email and show the destination clearly.
+
+## Launch status
+
+The public website remains in pre-launch review until a company-controlled public project inbox is confirmed and configured.
