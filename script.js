@@ -1,5 +1,5 @@
 const header=document.querySelector('[data-header]');const menuButton=document.querySelector('[data-menu-button]');const menuLabel=document.querySelector('[data-menu-label]');const nav=document.querySelector('[data-nav]');const form=document.querySelector('[data-contact-form]');
-const publicEmail='';
+const publicEmail='kkuhlekuyeza23@gmail.com';
 if(window.matchMedia('(max-width: 720px)').matches)nav?.setAttribute('inert','');
 const updateHeader=()=>header.classList.toggle('scrolled',window.scrollY>16);updateHeader();window.addEventListener('scroll',updateHeader,{passive:true});
 const setMenu=open=>{menuButton?.setAttribute('aria-expanded',String(open));menuButton?.setAttribute('aria-label',`${open?'Close':'Open'} navigation`);if(menuLabel)menuLabel.textContent=`${open?'Close':'Open'} navigation`;nav?.classList.toggle('open',open);if(nav){if(open)nav.removeAttribute('inert');else nav.setAttribute('inert','')}document.body.classList.toggle('menu-open',open)};
