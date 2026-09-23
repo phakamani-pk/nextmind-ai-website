@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="NextMind-AI builds clear, useful websites and custom software for businesses, with a focused interest in real estate.">
   <meta name="theme-color" content="#07111f">
+  <link rel="canonical" href="https://phakamani-pk.github.io/nextmind-ai-website/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://phakamani-pk.github.io/nextmind-ai-website/">
+  <meta property="og:title" content="NextMind-AI — Websites and software for business">
+  <meta property="og:description" content="Focused websites and custom software for businesses, including real-estate teams.">
+  <meta property="og:image" content="https://phakamani-pk.github.io/nextmind-ai-website/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <title>NextMind-AI — Websites and software for business</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
@@ -20,8 +28,8 @@
         </svg>
         <span>NextMind<span>-AI</span></span>
       </a>
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>
-        <span class="sr-only">Open navigation</span>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation" data-menu-button>
+        <span class="sr-only" data-menu-label>Open navigation</span>
         <span></span><span></span>
       </button>
       <nav id="site-nav" class="site-nav" aria-label="Primary" data-nav>
@@ -129,7 +137,7 @@
           <p class="eyebrow dark"><span></span> About NextMind-AI</p>
           <h2>A new technology company with a practical starting point.</h2>
           <p class="large-copy">NextMind-AI was created to build websites and software for businesses, including businesses in the real-estate industry.</p>
-          <p>We are early-stage, so we will not fill this page with inflated claims or borrowed success stories. Our focus is simple: understand the need, make the work clear and build a credible first result.</p>
+          <p>We are an early-stage technology company focused on clear collaboration and useful first outcomes. Our starting point is simple: understand the need, make the work clear and build a credible first result.</p>
           <div class="principles">
             <div><span>01</span><strong>Business-first thinking</strong></div>
             <div><span>02</span><strong>Clear communication</strong></div>
@@ -149,14 +157,15 @@
         </div>
         <form class="contact-form" data-contact-form novalidate>
           <div class="field-row">
-            <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required><span class="error" id="name-error"></span></div>
-            <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required><span class="error" id="email-error"></span></div>
+            <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" aria-describedby="name-error" required><span class="error" id="name-error"></span></div>
+            <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" aria-describedby="email-error" required><span class="error" id="email-error"></span></div>
           </div>
           <div class="field"><label for="company">Company <span>(optional)</span></label><input id="company" name="company" autocomplete="organization"></div>
-          <div class="field"><label for="project">What are you interested in?</label><select id="project" name="project" required><option value="">Choose one</option><option>Business website</option><option>Custom software</option><option>Real-estate digital solution</option><option>Not sure yet</option></select><span class="error" id="project-error"></span></div>
-          <div class="field"><label for="message">Tell us a little about the need</label><textarea id="message" name="message" rows="4" required></textarea><span class="error" id="message-error"></span></div>
-          <button class="button submit-button" type="submit">Create email enquiry <span aria-hidden="true">↗</span></button>
-          <p class="form-note" data-form-note>This opens your email app with the details ready to send.</p>
+          <div class="field"><label for="project">What are you interested in?</label><select id="project" name="project" aria-describedby="project-error" required><option value="">Choose one</option><option>Business website</option><option>Custom software</option><option>Real-estate digital solution</option><option>Not sure yet</option></select><span class="error" id="project-error"></span></div>
+          <div class="field"><label for="message">Tell us a little about the need</label><textarea id="message" name="message" rows="4" aria-describedby="message-error" required></textarea><span class="error" id="message-error"></span></div>
+          <button class="button submit-button" type="submit">Prepare enquiry <span aria-hidden="true">↗</span></button>
+          <p class="form-note" data-form-note aria-live="polite">The public project inbox is being confirmed. Your details stay in your browser.</p>
+          <div class="sr-only" aria-live="assertive" data-form-status></div>
         </form>
       </div>
     </section>
