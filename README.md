@@ -14,4 +14,4 @@ Then open `http://localhost:8080`.
 
 ## Contact path
 
-The enquiry form validates the essential fields and creates a pre-addressed email in the visitor's email application. The destination address should be replaced when a dedicated company inbox is confirmed.
+The enquiry form validates the essential fields and preserves the drafted enquiry without sending personal data to an unconfirmed third-party destination. Set `publicEmail` in `script.js` only after NextMind-AI confirms a public project inbox; the same form will then open a ready-to-send email and show the destination clearly.
